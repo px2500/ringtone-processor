@@ -16,9 +16,51 @@
 
 <BR><BR>
 <P>
-<BR><BR>
 
 <A HREF="https://www.github.com/px2500/ringtone-processor">Ringtone processor repository</A>
+<BR><BR><BR>
+<h2>Ringtone Test Samples</h2>
+
+<div class="ringtone">
+  <div class="title">Highway Kind 2</div>
+
+  <audio src="Highway Kind 2.m4r"></audio>
+
+  <div class="controls">
+    <button onclick="playTone(this)">▶ Play</button>
+    <a href="Highway Kind 2.m4r" download="downloads/Highway Kind 2.m4r">⬇ Download</a>
+  </div>
+</div>
+<!--  This can be used for a second ringtone
+<div class="ringtone">
+  <div class="title">Alert Tone</div>
+
+  <audio src="ringtones/alert.m4r"></audio>
+
+  <div class="controls">
+    <button onclick="playTone(this)">▶ Play</button>
+    <a href="ringtones/alert.m4r" download="alert.m4r">⬇ Download</a>
+  </div>
+</div>
+-->
+<script>
+
+function playTone(button){
+
+  const audio = button.parentElement.parentElement.querySelector("audio");
+
+  document.querySelectorAll("audio").forEach(a=>{
+    if(a !== audio){
+      a.pause();
+      a.currentTime = 0;
+    }
+  });
+
+  audio.play();
+}
+
+</script>
+
 
 </body>
 </HTML>
